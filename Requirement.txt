@@ -1,0 +1,25 @@
+Objective
+    Create a single page for generation Regular Expressions. Making the site low code solution for generating  Regular expressions.
+
+Overview 
+    The first draft Page will have mostly dropdowns and text box, That will specify selection options which in combination will result in regular expression.
+
+    Note
+        [^] - Dropdown component
+        "String" - Input text component
+
+    For example
+        [^Starts with] "Hello" [^Ends with] "ld"
+            "^Hello ld$"
+
+Technical Overview
+    FrontEnd
+        Vanilla JS [HTML,CSS,JS]
+        Bootstrap [Faster prototyping]
+    Backend
+        Node JS
+        Express
+    Deployment
+        Heroku/Git-Pages/ Netlify
+    ProjectManagement
+        Github
