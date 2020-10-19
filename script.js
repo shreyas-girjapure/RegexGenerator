@@ -1,5 +1,4 @@
 function addRegX() {
-    var x = document.getElementById("mySelect").value;
-    console.log("-----"+x);
+    let x = document.getElementById("mySelect").value;    
     document.getElementById("expression").value += x;
   }
