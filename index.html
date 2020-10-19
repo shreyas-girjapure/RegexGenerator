@@ -27,12 +27,24 @@
                 <div class="col-sm">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Methods</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
+                        <select class="form-control" id="mySelect" onchange="addRegX()">
+                            <option class="dropdown-item" value="[a-zA-Z]">Alphabets Set</option>
+                            <option class="dropdown-item" value="[0-9]">Numbers Set</option>
+                            <option class="dropdown-item" value="\d">Any Digit</option>
+                            <option class="dropdown-item" value="\D">Non Digit</option>
+                            <option class="dropdown-item" value="^">Starts with</option>
+                            <option class="dropdown-item" value="$">Ends with</option>
+                            <option class="dropdown-item" value="\w">character or number</option>
+                            <option class="dropdown-item" value="\W">non-character or number</option>
+                            <option class="dropdown-item" value="|">OR</option>
+                            <option class="dropdown-item" value=".">Anythings</option>
+                            <option class="dropdown-item" value="+">match one or more</option>
+                            <option class="dropdown-item" value="*">match zero or more</option>
+                            <option class="dropdown-item" value="?">match no or one time</option>
+                            <option class="dropdown-item" value="*?">find smallest match</option>
+                            <option class="dropdown-item" value="\s">space</option>
+                            <option class="dropdown-item" value="\S">non-space</option>
+                            <option class="dropdown-item" value="()">Group it</option>
                         </select>
                       </div>
                 </div>
@@ -50,7 +62,7 @@
                 </div>
             </div>
             <label class="mt-3" for="expression">Expression</label>
-            <input type="text" id="expression" class="form-control">
+            <input  type="text" id="expression" class="form-control">
         </div>
     </div>
 
