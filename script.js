@@ -10,11 +10,25 @@ document
 document
   .getElementById("copyToClipboard-button")
   .addEventListener("click", copyToClipboard);
+document
+  .getElementById("reset")
+  .addEventListener("click", resetPage);
 
 function handleOptionChange(event) {
   let value = event.target.value;
   document.getElementById("expression").value += value;
   generateSampleText(value);
+}
+
+function resetPage(event) {
+  let inputs = document.querySelectorAll('input');
+  let selects = document.querySelectorAll('select');
+  inputs.forEach((input)=>{
+    input.value='';
+  })
+  selects.forEach((select)=>{
+    select.value='';
+  })
 }
 
 function generateSampleText(value) {
@@ -67,7 +81,7 @@ function createInputBox(type,placeholderText) {
   inputBox.placeholder=placeholderText;
   return inputBox;
 }
-/*<div class="row">
+/*                  <div class="row">
                         <div class="col-sm">
                             <label >Start</label>
                             <input type="text" class='form-control'>
