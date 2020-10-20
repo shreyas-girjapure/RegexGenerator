@@ -5,18 +5,28 @@ document.getElementById('quantifierSelect').addEventListener('change',handleOpti
 
 function handleOptionChange(event){
   let value = event.target.value;
-  document.getElementById('expression').value = value;
+  document.getElementById('expression').value += value;
   generateSampleText(value);
 }
 
 function generateSampleText(value){
-  let sampleExpressionElement = document.getElementById('DataString');
+  let sampleExpressionElement = document.getElementById('DataString');  
   switch (value) {
-    case '\\d':
-      sampleExpressionElement.innerText = '4';
+    case '[0-9]':
+      sampleExpressionElement.innerText += '4';
       break;
     case '[a-zA-Z]':
-      sampleExpressionElement.innerText = 'K';    
+      sampleExpressionElement.innerText += 'H';
+      break;    
+    case '\\w':
+      sampleExpressionElement.innerText += 'E';
+      break;
+      case '.':
+      sampleExpressionElement.innerText += 'L';
+      break;
+      case '\\s':
+      sampleExpressionElement.innerText += '  ';
+      break;            
     default:
       break;
   }
