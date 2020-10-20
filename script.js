@@ -5,7 +5,7 @@ document.getElementById('mySelect').addEventListener('change',handleOptionChange
 
 function handleOptionChange(event){
   let value = event.target.value;
-  document.getElementById('expression').value = value;
+  document.getElementById('expression').value += value;
   generateSampleText(value);
 }
 
