@@ -1,7 +1,7 @@
 
-
-document.getElementById('mySelect').addEventListener('change',handleOptionChange);
-
+document.getElementById('operatorSelect').addEventListener('change',handleOptionChange);
+document.getElementById('setSelect').addEventListener('change',handleOptionChange);
+document.getElementById('quantifierSelect').addEventListener('change',handleOptionChange);
 
 function handleOptionChange(event){
   let value = event.target.value;
