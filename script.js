@@ -42,6 +42,7 @@ function generateSampleText(value) {
 
 function copyToClipboard(event) {
   let expression = document.getElementById("expression");
+  if (expression.value === "") return;
   expression.select();
   document.execCommand("copy");
   addAlert();
@@ -56,5 +57,33 @@ function addAlert(event) {
   document.querySelector(".card.w-100.mt-2").before(alert);
   setTimeout(() => {
     alert.remove();
-  }, 1000);
+  }, 1200);
+}
+
+function createInputBox(type,placeholderText) {
+  let inputBox = document.createElement("input");
+  inputBox.type = type;
+  inputBox.classList.add("form-control");
+  inputBox.placeholder=placeholderText;
+  return inputBox;
+}
+/*<div class="row">
+                        <div class="col-sm">
+                            <label >Start</label>
+                            <input type="text" class='form-control'>
+                        </div>                        
+                        <div class="col-sm">
+                            <label >End</label>
+                            <input type="text" class='form-control'>
+                        </div>                        
+                    </div>*/
+function createRow() {
+  let row = document.createElement("div");
+  row.classList.add("row");
+  return row;
+}
+function createColumns() {
+  let col = document.createElement("div");
+  col.classList.add("col-sm");
+  return col;
 }

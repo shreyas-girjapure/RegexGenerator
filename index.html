@@ -51,6 +51,14 @@
                             <option class="dropdown-item" value="">Custom String</option>
                         </select>
                     </div>
+                    <div class="row">
+                        <div class="col-sm">                            
+                            <input type="text" class='form-control'>
+                        </div>                        
+                        <div class="col-sm">                            
+                            <input type="text" class='form-control'>
+                        </div>                        
+                    </div>
                 </div>
                 <div class="col-sm">
                     <div class="form-group">
@@ -63,16 +71,29 @@
                             <option class="dropdown-item" value="{}">Between Range</option>
                         </select>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-sm">                            
+                            <input type="text" class='form-control' placeholder='start'>
+                        </div>                        
+                        <div class="col-sm">                            
+                            <input type="text" class='form-control' placeholder='end'>
+                        </div>                        
+                    </div>
+                </div>                
+            </div>
+            <div class="row row-2">
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
             </div>
             <label for="expression">Expression</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" id="expression" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" id="expression">
                 <div class="input-group-append">
                     <button class="btn btn-secondary" type="button" id="copyToClipboard-button">
                         <i class="far fa-clipboard"></i></button>
                 </div>
-            </div>            
+            </div>
             <div class="card w-100 mt-2">
                 <div class="card-body">
                     <h5 class="card-title">Sample String</h5>
