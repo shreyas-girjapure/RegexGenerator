@@ -20,14 +20,14 @@
 <body>
     <div class="parent-container container">
         <div class="head-section pb-5 pt-5">
-            <h1 class="text-center">Regular Expression Generator</h1>
+            <p class="text-center display-4">Regular Expression Generator</p>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Methods</label>
-                        <select class="form-control" id="mySelect" onchange="addRegX()">
+                        <select class="form-control" id="mySelect">
                             <option class="dropdown-item" value="[a-zA-Z]">Alphabets Set</option>
                             <option class="dropdown-item" value="[0-9]">Numbers Set</option>
                             <option class="dropdown-item" value="\d">Any Digit</option>
@@ -64,7 +64,7 @@
             <label class="mt-3" for="expression">Expression</label>           
             <input type="text" id="expression" class="form-control">
             <label class="mt-3" for="DataString">Sample Data String</label>
-            <input type="text" readonly class="form-control-plaintext display-2 form-control-lg" id="DataString" value="email@example.com">
+            <p id="DataString" class='display-4'>email@example.com</p>
         </div>
     </div>
 
