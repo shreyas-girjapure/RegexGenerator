@@ -27,8 +27,8 @@
             <div class="row">                
                 <div class="col-sm">
                     <div class="form-group">
-                        <label for="exampleFormControlSelect2">Operators</label>
-                        <select class="form-control" id="exampleFormControlSelect2">
+                        <label for="operatorSelect">Operators</label>
+                        <select class="form-control" id="operatorSelect">
                             <option class="dropdown-item" value="^">Starts With</option>
                             <option class="dropdown-item" value="$">Ends With</option>
                             <option class="dropdown-item" value="|">OR</option>                                                        
@@ -37,34 +37,29 @@
                 </div>
                 <div class="col-sm">
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Sets</label>
-                        <select class="form-control" id="mySelect">
+                        <label for="setSelect">Sets</label>
+                        <select class="form-control" id="setSelect">
                             <option class="dropdown-item" value="[a-zA-Z]">Alphabets Set*</option>
                             <option class="dropdown-item" value="[0-9]">Numbers Set</option>
                             <option class="dropdown-item" value="\d">Any Digit</option>                            
                             <option class="dropdown-item" value="\w">character or number</option>                                                        
                             <option class="dropdown-item" value=".">Anything</option>                            
                             <option class="dropdown-item" value="\s">space</option>                                                        
-                            <option class="dropdown-item" value="">Custom String</option>                                                        
-
+                            <option class="dropdown-item" value="">Custom String</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-sm">
                     <div class="form-group">
-                        <label for="exampleFormControlSelect2">Quantifiers</label>
-                        <select class="form-control" id="exampleFormControlSelect2">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <label for="quantifierSelect">Quantifiers</label>
+                        <select class="form-control" id="quantifierSelect">
+                            <option class="dropdown-item" value="*">Any</option>                            
+                            <option class="dropdown-item" value="+">Atleast One</option>                            
+                            <option class="dropdown-item" value="?">Zero or One</option>                            
+                            <option class="dropdown-item" value="{}">Custom String</option>                            
                         </select>
                     </div>
-                </div>
-                <div class="col-sm">
-                    <i class="fas fa-plus"></i>
-                </div>
+                </div>                
             </div>
             <label class="mt-3" for="expression">Expression</label>
             <input type="text" id="expression" class="form-control">
