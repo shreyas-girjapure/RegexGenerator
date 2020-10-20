@@ -10,13 +10,23 @@ function handleOptionChange(event){
 }
 
 function generateSampleText(value){
-  let sampleExpressionElement = document.getElementById('DataString');
+  let sampleExpressionElement = document.getElementById('DataString');  
   switch (value) {
-    case '\\d':
-      sampleExpressionElement.innerText = '4';
+    case '[0-9]':
+      sampleExpressionElement.innerText += '4';
       break;
     case '[a-zA-Z]':
-      sampleExpressionElement.innerText = 'K';    
+      sampleExpressionElement.innerText += 'H';
+      break;    
+    case '\\w':
+      sampleExpressionElement.innerText += 'E';
+      break;
+      case '.':
+      sampleExpressionElement.innerText += 'L';
+      break;
+      case '\\s':
+      sampleExpressionElement.innerText += '  ';
+      break;            
     default:
       break;
   }
