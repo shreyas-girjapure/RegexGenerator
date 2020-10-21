@@ -48,15 +48,15 @@
                             <option class="dropdown-item" value="\w">Character or Number</option>
                             <option class="dropdown-item" value=".">Anything</option>
                             <option class="dropdown-item" value="\s">Space</option>
-                            <option class="dropdown-item" value="">Custom String</option>
+                            <option class="dropdown-item" value="custom">Custom String</option>
                         </select>
                     </div>
                     <div class="row">
                         <div class="col-sm">                            
-                            <input type="text" class='form-control'>
+                            <input type="text" class='form-control' placeholder="start">
                         </div>                        
                         <div class="col-sm">                            
-                            <input type="text" class='form-control'>
+                            <input type="text" class='form-control' placeholder="end">
                         </div>                        
                     </div>
                 </div>
@@ -81,11 +81,13 @@
                     </div>
                 </div>                
             </div>
-            <div class="row row-2">
-                <div class="col-sm"></div>
-                <div class="col-sm"></div>
-                <div class="col-sm"></div>
-            </div>
+            <div class ="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-auto">
+                        <button type="button" id='add' class="btn btn-secondary mt-4 w-30">Add Step<i class="fas fa-plus-circle pl-2"></i></button>            
+                    </div>                                                       
+                </div>                
+            </div>            
             <label for="expression">Expression</label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" id="expression">

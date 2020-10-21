@@ -81,16 +81,7 @@ function createInputBox(type,placeholderText) {
   inputBox.placeholder=placeholderText;
   return inputBox;
 }
-/*                  <div class="row">
-                        <div class="col-sm">
-                            <label >Start</label>
-                            <input type="text" class='form-control'>
-                        </div>                        
-                        <div class="col-sm">
-                            <label >End</label>
-                            <input type="text" class='form-control'>
-                        </div>                        
-                    </div>*/
+
 function createRow() {
   let row = document.createElement("div");
   row.classList.add("row");
