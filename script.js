@@ -2,6 +2,7 @@ import {operatorOptions,quantifierOptions,setOptions} from './StaticData';
 
 console.log(operatorOptions);
 console.log(quantifierOptions);
+console.log('loading started');
 
 document
   .getElementById("operatorSelect")
