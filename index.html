@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regex Generator</title>
+    <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
@@ -17,7 +18,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
-    <script defer src="script.js"></script>
+   
 </head>
 
 <body>
@@ -32,9 +33,6 @@
                         <label for="operatorSelect">Operators</label>
                         <select class="form-control" id="operatorSelect">
                             <option class="dropdown-item" value=""></option>
-                            <option class="dropdown-item" value="^">Starts With</option>
-                            <option class="dropdown-item" value="$">Ends With</option>
-                            <option class="dropdown-item" value="|">OR</option>
                         </select>
                     </div>
                 </div>
@@ -43,12 +41,8 @@
                         <label for="setSelect">Sets</label>
                         <select class="form-control" id="setSelect">
                             <option class="dropdown-item" value=""></option>
-                            <option class="dropdown-item" value="[a-zA-Z]">Alphabets Set</option>
-                            <option class="dropdown-item" value="[0-9]">Numbers Set</option>
-                            <option class="dropdown-item" value="\w">Character or Number</option>
-                            <option class="dropdown-item" value=".">Anything</option>
-                            <option class="dropdown-item" value="\s">Space</option>
-                            <option class="dropdown-item" value="custom">Custom String</option>
+                            
+                            
                         </select>
                     </div>
                     <div class="row">
@@ -65,10 +59,6 @@
                         <label for="quantifierSelect">Quantifiers</label>
                         <select class="form-control" id="quantifierSelect">
                             <option class="dropdown-item" value=""></option>
-                            <option class="dropdown-item" value="*">Any</option>
-                            <option class="dropdown-item" value="+">Atleast One</option>
-                            <option class="dropdown-item" value="?">Zero or One</option>
-                            <option class="dropdown-item" value="{}">Between Range</option>
                         </select>
                     </div>
                     <div class="row">
@@ -114,5 +104,5 @@
         </div>
     </div>
 </body>
-
+<script src="DropdownValuesGenerator.js"></script>
 </html>

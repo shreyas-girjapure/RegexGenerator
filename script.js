@@ -14,6 +14,10 @@ document
   .getElementById("reset")
   .addEventListener("click", resetPage);
 
+document.getElementById('operatorSelect').addEventListener('change',handleOptionChange);
+document.getElementById('setSelect').addEventListener('change',handleOptionChange);
+document.getElementById('quantifierSelect').addEventListener('change',handleOptionChange);
+
 function handleOptionChange(event) {
   let value = event.target.value;
   document.getElementById("expression").value += value;
@@ -46,8 +50,8 @@ function generateSampleText(value) {
     case ".":
       sampleExpressionElement.innerText += "L";
       break;
-    case "\\s":
-      sampleExpressionElement.innerText += "  ";
+    case "\s":
+      sampleExpressionElement.innerText += " ";
       break;
     default:
       break;
@@ -66,6 +70,7 @@ function addAlert(event) {
   let alert = document.createElement("div");
   alert.classList.add("alert");
   alert.classList.add("alert-success");
+  alert.classList.add("transition-effect");
   alert.setAttribute("role", "alert");
   alert.innerText = "Copied to Clipboard!";
   document.querySelector(".card.w-100.mt-2").before(alert);
