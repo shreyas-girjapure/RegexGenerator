@@ -45,6 +45,10 @@ function handleInputTextChange(event){
 function resetPage(event) {
   let inputs = document.querySelectorAll("input");
   let selects = document.querySelectorAll("select");
+  let badges = document.querySelectorAll("span.badge");
+  let sampleText = document.querySelector("#DataString");
+  sampleText.innerHTML = '';
+  badges.forEach(badge=>badge.remove())
   inputs.forEach((input) => {
     input.value = "";
   });

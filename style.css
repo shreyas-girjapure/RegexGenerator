@@ -1,14 +1,12 @@
-.transition-effect{
-  
-    animation: fadeOut ease-out 2s;
+.transition-effect {
+  animation: fadeOut ease-out 2s;
 }
 
-
-  @keyframes fadeOut {
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-    }
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
   }
+  100% {
+    opacity: 0;
+  }
+}
