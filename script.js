@@ -115,14 +115,7 @@ function createColumns() {
   col.classList.add("col-sm");
   return col;
 }
-/*
-<span class="badge badge-primary p-2">Valid</span>
-<span class="badge badge-danger p-2">InValid</span>
-<span class="badge badge-secondary p-2">Stars with</span>
-<span class="badge badge-secondary p-2">Case Sensitive</span>
-<span class="badge badge-secondary p-2">Correct Escaped</span>
-<span class="badge badge-warning p-2">Greedy</span>
-*/
+
 function createBadge(value) {
   let badge = document.createElement('span')
   badge.classList.add('badge')
