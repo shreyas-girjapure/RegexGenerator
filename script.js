@@ -1,4 +1,4 @@
-console.log('Script loading started');
+console.log("Script loading started");
 
 document
   .getElementById("operatorSelect")
@@ -12,13 +12,17 @@ document
 document
   .getElementById("copyToClipboard-button")
   .addEventListener("click", copyToClipboard);
-document
-  .getElementById("reset")
-  .addEventListener("click", resetPage);
+document.getElementById("reset").addEventListener("click", resetPage);
 
-document.getElementById('operatorSelect').addEventListener('change',handleOptionChange);
-document.getElementById('setSelect').addEventListener('change',handleOptionChange);
-document.getElementById('quantifierSelect').addEventListener('change',handleOptionChange);
+document
+  .getElementById("operatorSelect")
+  .addEventListener("change", handleOptionChange);
+document
+  .getElementById("setSelect")
+  .addEventListener("change", handleOptionChange);
+document
+  .getElementById("quantifierSelect")
+  .addEventListener("change", handleOptionChange);
 
 function handleOptionChange(event) {
   let value = event.target.value;
@@ -27,14 +31,14 @@ function handleOptionChange(event) {
 }
 
 function resetPage(event) {
-  let inputs = document.querySelectorAll('input');
-  let selects = document.querySelectorAll('select');
-  inputs.forEach((input)=>{
-    input.value='';
-  })
-  selects.forEach((select)=>{
-    select.value='';
-  })
+  let inputs = document.querySelectorAll("input");
+  let selects = document.querySelectorAll("select");
+  inputs.forEach((input) => {
+    input.value = "";
+  });
+  selects.forEach((select) => {
+    select.value = "";
+  });
 }
 
 function generateSampleText(value) {
@@ -52,7 +56,7 @@ function generateSampleText(value) {
     case ".":
       sampleExpressionElement.innerText += "L";
       break;
-    case "\s":
+    case "s":
       sampleExpressionElement.innerText += " ";
       break;
     default:
@@ -81,11 +85,11 @@ function addAlert(event) {
   }, 1200);
 }
 
-function createInputBox(type,placeholderText) {
+function createInputBox(type, placeholderText) {
   let inputBox = document.createElement("input");
   inputBox.type = type;
   inputBox.classList.add("form-control");
-  inputBox.placeholder=placeholderText;
+  inputBox.placeholder = placeholderText;
   return inputBox;
 }
 
@@ -98,4 +102,53 @@ function createColumns() {
   let col = document.createElement("div");
   col.classList.add("col-sm");
   return col;
+}
+
+let analyzerExpressions = [
+  {
+    label: "escapeCharacters",
+    expression: /\[|\]|\(|\)|\.|\^|\$|\?|\||\+|\*/,
+    hint:"hasEscapeCharacters",    
+  },
+  {
+    label: "smallAlphabets",
+    expression: /[a-z]/,
+    hint:"hasAlphabets",
+  },
+  {
+    label: "capitalAlphabets",
+    expression: /[A-Z]/,
+    hint:"hasCases"
+  },
+  {
+    label: "numbers",
+    expression: /[0-9]/,
+    hint:"hasNumbers"
+  },
+  {
+    label: "word",
+    expression: /[a-zA-Z0-9]/,
+    hint:"useWord"
+  },
+  {
+    label: "spaces",
+    expression: /[\s]/,
+    hint:"hasSpace"
+  },
+  {
+    label: "symbols",
+    expression: /[!@#%&-="`;,~:{}]/,
+    hint:"hasSpecialSymbols"
+  },    
+];
+
+function analyzeString(input,expressions){
+  let statsArray = []; 
+  let inputString = String(input);
+  if(inputString.length==0) return;
+  if(inputString.length>1) statsArray.push('useQuantifiers');
+  expressions.forEach((item)=>{
+    if(inputString.match(item.expression)) statsArray.push(item.hint);
+  })
+  return statsArray;
 }
