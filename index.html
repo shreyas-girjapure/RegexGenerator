@@ -25,7 +25,11 @@
         <div class="head-section pb-5 pt-5">
             <p class="text-center display-4">Regular Expression Generator</p>
         </div>
-        <div class="container">
+        <div class="container">            
+                <label for="inputText">Input Text</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="inputText">                    
+                </div>            
             <div class="row">
                 <div class="col-sm">
                     <div class="form-group">
@@ -69,8 +73,8 @@
                 </div>
             </div>
             <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col-md-auto">
+                <div class="row justify-content-sm-center">
+                    <div class="col-sm-auto">
                         <button type="button" id='add' class="btn btn-secondary mt-4 w-30">Add Step<i
                                 class="fas fa-plus-circle pl-2"></i></button>
                     </div>
@@ -88,14 +92,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Sample String</h5>
                     <p id="DataString" class='card-text display-4'></p>
-                    <div id="stats">
-                        <span class="badge badge-primary p-2">Valid</span>
-                        <span class="badge badge-danger p-2">InValid</span>
-                        <span class="badge badge-secondary p-2">Stars with</span>
-                        <span class="badge badge-secondary p-2">Case Sensitive</span>
-                        <span class="badge badge-secondary p-2">Correct Escaped</span>
-                        <span class="badge badge-warning p-2">Greedy</span>
-                    </div>
+                    <div id="stats"></div>
                 </div>
             </div>
             <button type="button" id='reset' class="btn btn-danger w-100 mt-4">Reset <i
