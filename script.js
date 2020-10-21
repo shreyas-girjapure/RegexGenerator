@@ -1,3 +1,8 @@
+import {operatorOptions,quantifierOptions,setOptions} from './StaticData';
+
+console.log(operatorOptions);
+console.log(quantifierOptions);
+
 document
   .getElementById("operatorSelect")
   .addEventListener("change", handleOptionChange);
