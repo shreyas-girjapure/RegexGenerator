@@ -13,7 +13,6 @@ document
   .getElementById("copyToClipboard-button")
   .addEventListener("click", copyToClipboard);
 document.getElementById("reset").addEventListener("click", resetPage);
-
 document
   .getElementById("operatorSelect")
   .addEventListener("change", handleOptionChange);
@@ -32,14 +31,14 @@ function handleOptionChange(event) {
   document.getElementById("expression").value += value;
   generateSampleText(value);
 }
-function handleInputTextChange(event){
-  let result = analyzeString(event.target.value,analyzerExpressions);  
-  if(!result) return;
-  let badges = result.map((item)=>createBadge(item));
-  let statsEle = document.getElementById('stats');
-  badges.forEach(item=>{
-    statsEle.appendChild(item)
-  })
+function handleInputTextChange(event) {
+  let result = analyzeString(event.target.value, analyzerExpressions);
+  if (!result) return;
+  let badges = result.map((item) => createBadge(item.hint, item.type, "h4"));
+  let statsEle = document.getElementById("stats");
+  badges.forEach((item) => {
+    statsEle.appendChild(item);
+  });
 }
 
 function resetPage(event) {
@@ -47,8 +46,8 @@ function resetPage(event) {
   let selects = document.querySelectorAll("select");
   let badges = document.querySelectorAll("span.badge");
   let sampleText = document.querySelector("#DataString");
-  sampleText.innerHTML = '';
-  badges.forEach(badge=>badge.remove())
+  sampleText.innerHTML = "";
+  badges.forEach((badge) => badge.remove());
   inputs.forEach((input) => {
     input.value = "";
   });
@@ -120,13 +119,19 @@ function createColumns() {
   return col;
 }
 
-function createBadge(value) {
-  let badge = document.createElement('span')
-  badge.classList.add('badge')
-  badge.classList.add('badge-secondary')
-  badge.classList.add('p-2');  
-  badge.classList.add('m-1');  
+function createBadge(value, type, size) {
+  let badge = document.createElement("span");
+  badge.classList.add("badge");
+  badge.classList.add(`badge-${type}`);
+  badge.classList.add("p-2");
+  badge.classList.add("m-1");
   badge.innerHTML = value;
+  if (size && size.match(/h[1-6]/)) {
+    let sizeEle = document.createElement(size);
+    sizeEle.classList.add("d-inline");
+    sizeEle.appendChild(badge);
+    return sizeEle;
+  }
   return badge;
 }
 
@@ -134,47 +139,59 @@ let analyzerExpressions = [
   {
     label: "escapeCharacters",
     expression: /\[|\]|\(|\)|\.|\^|\$|\?|\||\+|\*/,
-    hint:"hasEscapeCharacters",    
+    hint: "hasEscapeCharacters",
+    type: "warning",
   },
   {
     label: "smallAlphabets",
     expression: /[a-z]/,
-    hint:"hasAlphabets",
+    hint: "hasAlphabets",
+    type: "secondary",
   },
   {
     label: "capitalAlphabets",
     expression: /[A-Z]/,
-    hint:"hasCases"
+    hint: "hasCases",
+    type: "warning",
   },
   {
     label: "numbers",
     expression: /[0-9]/,
-    hint:"hasNumbers"
+    hint: "hasNumbers",
+    type: "secondary",
   },
   {
     label: "word",
     expression: /[a-zA-Z0-9]/,
-    hint:"useWord"
+    hint: "useWord",
+    type: "info",
   },
   {
     label: "spaces",
     expression: /[\s]/,
-    hint:"hasSpace"
+    hint: "hasSpace",
+    type: "secondary",
   },
   {
     label: "symbols",
     expression: /[!@#%&-="`;,~:{}]/,
-    hint:"hasSpecialSymbols"
-  },    
+    hint: "hasSpecialSymbols",
+    type: "warning",
+  },
 ];
 
-function analyzeString(input,expressions){
-  let statsArray = []; 
+function analyzeString(input, expressions) {
+  let statsArray = [];
   let inputString = String(input);
-  if(inputString.length==0) return;
-  if(inputString.length>1) statsArray.push('useQuantifiers');
-  expressions.forEach((item)=>{
-    if(inputString.match(item.expression)) statsArray.push(item.hint);
-  })
+  if (inputString.length == 0) return;
+  if (inputString.length > 1)
+    statsArray.push({
+      label: "quantifiers",      
+      hint: "useQuantifiers",
+      type: "info",
+    });
+  expressions.forEach((item) => {
+    if (inputString.match(item.expression)) statsArray.push(item);
+  });
   return statsArray;
 }
