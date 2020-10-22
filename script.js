@@ -31,11 +31,12 @@ function handleOptionChange(event) {
   document.getElementById("expression").value += value;
   generateSampleText(value);
 }
-function handleInputTextChange(event) {
+function handleInputTextChange(event) {  
+  let statsEle = document.getElementById("stats");
+  statsEle.innerHTML="";
   let result = analyzeString(event.target.value, analyzerExpressions);
   if (!result) return;
-  let badges = result.map((item) => createBadge(item.hint, item.type, "h4"));
-  let statsEle = document.getElementById("stats");
+  let badges = result.map((item) => createBadge(item.hint, item.type, "h4"));  
   badges.forEach((item) => {
     statsEle.appendChild(item);
   });
