@@ -19,7 +19,7 @@ Link : https://shreyas-girjapure.github.io/RegexGenerator/
 1. Commit those changes to your local git with `git commit -m 'Meaningful commit message`'.
 1. Push committed changes to your online git hub repository with `git push <remote-name> <branch-name>`. 
 
-### Merge changes to main project/repository
+#### Merge changes to main project/repository
 
 1. Make a pull request (PR) by clicking on 'pull request' tab on your git hub repository.
 1. Fill out necessary details.
