@@ -125,7 +125,7 @@ function createBadge(value) {
   badge.classList.add('badge')
   badge.classList.add('badge-secondary')
   badge.classList.add('p-2');  
-  badge.classList.add('m-2');  
+  badge.classList.add('m-1');  
   badge.innerHTML = value;
   return badge;
 }
