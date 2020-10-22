@@ -6,9 +6,9 @@ Link : https://shreyas-girjapure.github.io/RegexGenerator/
 * Objective
   * Make a low code / verbose approach for creating regular expressions.
   
-* Want to contribute to code base?
+### Want to contribute to code base?
 
-### Follow the below steps to make your first open-source contribution.
+#### Follow the below steps to make your first open-source contribution.
 
 1. Download Git to your local system.
 1. Create a Git hub account.
