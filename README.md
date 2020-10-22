@@ -15,7 +15,7 @@ Link : https://shreyas-girjapure.github.io/RegexGenerator/
 1. Fork [RegexGenerator](https://github.com/shreyas-girjapure/RegexGenerator) "it'll make a copy on your Github".
 1. Clone with `git clone URL`.
 1. Make changes to your local cloned git.
-1. Add changes to your local git with `git add .`
+1. Add changes to your local git with `git add <filename>` or `git add .` (to add all the changes).
 1. Commit those changes to your local git with `git commit -m 'Meaningful commit message`'.
 1. Push committed changes to your online git hub repository with `git push <remote-name> <branch-name>`. 
 
