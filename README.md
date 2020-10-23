@@ -1,7 +1,7 @@
 # RegexGenerator
 ### Simple Regular expression generator
 
-Link : https://shreyas-girjapure.github.io/RegexGenerator/
+Link : https://regular-expression-generator.netlify.app/
 
 * Objective
   * Make a low code / verbose approach for creating regular expressions.
