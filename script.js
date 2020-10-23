@@ -32,7 +32,10 @@ document
 
 function handleExpressionInput(event) {
   let expr = event.target.value;  
-  if(!expr) return;  
+  if(!expr) {
+    clearHighlights();
+    return;
+  }    
   handleHighlight(expr);
 }
 
@@ -51,6 +54,13 @@ function applyHighlights(text, expression) {
   } catch (error) {
     console.log("invalid regex");
   }
+}
+
+function clearHighlights(){
+  let highlightedEles = document.querySelectorAll('mark');
+  highlightedEles.forEach((ele)=>{
+    ele.remove();
+  })
 }
 
 function handleOptionChange(event) {
@@ -74,6 +84,7 @@ function resetPage(event) {
   let selects = document.querySelectorAll("select");
   let badges = document.querySelectorAll("span.badge");
   let sampleText = document.querySelector("#DataString");
+  clearHighlights();  
   sampleText.innerHTML = "";
   badges.forEach((badge) => badge.remove());
   inputs.forEach((input) => {
