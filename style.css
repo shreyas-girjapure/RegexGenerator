@@ -6,14 +6,14 @@
 .backdrop {    
   position:absolute;
   top:6px;
-  left:-2px;
+  left:12px;
   overflow: none;
   background-color: transparent;
   z-index:0;  
 }
 mark {
-  margin:11px;
-  padding:2px;
+  margin:0;
+  padding:0;
   color: transparent;
   background-color: #d4e9ab;  
 }

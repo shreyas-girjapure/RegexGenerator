@@ -69,6 +69,7 @@ function handleOptionChange(event) {
   generateSampleText(value);
 }
 function handleInputTextChange(event) {
+  if(!event.target.value) clearHighlights();
   let statsEle = document.getElementById("stats");
   statsEle.innerHTML = "";
   let result = analyzeString(event.target.value, analyzerExpressions);
