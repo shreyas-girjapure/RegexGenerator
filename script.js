@@ -26,17 +26,44 @@ document
   .getElementById("inputText")
   .addEventListener("input", handleInputTextChange);
 
+document
+  .getElementById("expression")
+  .addEventListener("input", handleExpressionInput);
+
+function handleExpressionInput(event) {
+  let expr = event.target.value;  
+  if(!expr) return;  
+  handleHighlight(expr);
+}
+
+function handleHighlight(expression) {
+  let text = document.getElementById("inputText").value;
+  if (!text) return;
+  let highlightedText = applyHighlights(text, expression);
+  let highlights = document.querySelector(".highlights");
+  highlights.innerHTML = highlightedText;
+}
+
+function applyHighlights(text, expression) {
+  try {
+    let regex = new RegExp(expression);  
+    return text.replace(/\n$/g, "\n\n").replace(new RegExp(expression), "<mark>$&</mark>");
+  } catch (error) {
+    console.log("invalid regex");
+  }
+}
+
 function handleOptionChange(event) {
   let value = event.target.value;
   document.getElementById("expression").value += value;
   generateSampleText(value);
 }
-function handleInputTextChange(event) {  
+function handleInputTextChange(event) {
   let statsEle = document.getElementById("stats");
-  statsEle.innerHTML="";
+  statsEle.innerHTML = "";
   let result = analyzeString(event.target.value, analyzerExpressions);
   if (!result) return;
-  let badges = result.map((item) => createBadge(item.hint, item.type, "h4"));  
+  let badges = result.map((item) => createBadge(item.hint, item.type, "h4"));
   badges.forEach((item) => {
     statsEle.appendChild(item);
   });
@@ -187,7 +214,7 @@ function analyzeString(input, expressions) {
   if (inputString.length == 0) return;
   if (inputString.length > 1)
     statsArray.push({
-      label: "quantifiers",      
+      label: "quantifiers",
       hint: "useQuantifiers",
       type: "info",
     });
