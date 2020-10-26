@@ -35,4 +35,5 @@ let analyzerExpressions = [
       hint: "hasSpecialSymbols",
     },
   ];
-  
+
+module.exports = analyzerExpressions;

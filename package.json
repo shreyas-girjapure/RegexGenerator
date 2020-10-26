@@ -1,0 +1,28 @@
+{
+  "name": "regex-generator",
+  "version": "1.0.0",
+  "description": "Link : https://regular-expression-generator.netlify.app/",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shreyas-girjapure/RegexGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shreyas-girjapure/RegexGenerator/issues"
+  },
+  "homepage": "https://github.com/shreyas-girjapure/RegexGenerator#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
