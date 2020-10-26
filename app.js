@@ -9,7 +9,7 @@ app.set('view engine','ejs');
 
 
 app.get('',(req,res)=>{
-    res.render('index',{values:["dsad","asd","asd"]});
+    res.render('index');
 })
 
 app.listen(port,()=>{
